@@ -112,6 +112,22 @@
                     }
                 });
             }
+            {//Password validation UC:4
+                const text=document.querySelector('#pwd');
+                const texterror=document.querySelector('.pwd-error');
+                text.addEventListener('input',function()
+                {
+                    let pwdRegex=RegExp("[a-zA-z0-9]{8,}$");
+                    if(pwdRegex.test(text.value))
+                    {
+                        texterror.textContent="";
+                    }
+                    else
+                    {
+                        texterror.textContent="Incorrect Password"
+                    }
+                });
+            }
             //Display Salary using range
             const salary=document.querySelector('#Salary');
             const output=document.querySelector('.Salary-output');
