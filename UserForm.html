@@ -94,7 +94,24 @@
                     }
                 });
             }
+
         }
+        {   //phone number UC:3
+                const text=document.querySelector('#number');
+                const texterror=document.querySelector('.phone-error');
+                text.addEventListener('input',function()
+                {
+                    let phoneRegex=RegExp('^[0-9]+\\s[0-9]{10}$');
+                    if(phoneRegex.test(text.value))
+                    {
+                        texterror.textContent="";
+                    }
+                    else
+                    {
+                        texterror.textContent="Incorrect Phone-Number"
+                    }
+                });
+            }
             //Display Salary using range
             const salary=document.querySelector('#Salary');
             const output=document.querySelector('.Salary-output');
